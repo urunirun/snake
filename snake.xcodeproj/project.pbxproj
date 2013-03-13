@@ -11,6 +11,7 @@
 		ADD1051216F098C8003894F6 /* WSGameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */; };
 		ADD1051316F098C8003894F6 /* WSGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1051016F098C8003894F6 /* WSGameScene.cpp */; };
 		ADD1051616F098D1003894F6 /* WSGameCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1051416F098D1003894F6 /* WSGameCore.cpp */; };
+		ADD1051916F0A92B003894F6 /* WSAISnake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1051716F0A92B003894F6 /* WSAISnake.cpp */; };
 		ADFAABB816E8E7DE00C60519 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFAABB716E8E7DE00C60519 /* QuartzCore.framework */; };
 		ADFAABBA16E8E7DE00C60519 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFAABB916E8E7DE00C60519 /* OpenGLES.framework */; };
 		ADFAABBC16E8E7DE00C60519 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFAABBB16E8E7DE00C60519 /* OpenAL.framework */; };
@@ -218,6 +219,8 @@
 		ADD1051116F098C8003894F6 /* WSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSGameScene.h; path = Classes/WSGameScene.h; sourceTree = "<group>"; };
 		ADD1051416F098D1003894F6 /* WSGameCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameCore.cpp; path = Classes/WSGameCore.cpp; sourceTree = "<group>"; };
 		ADD1051516F098D1003894F6 /* WSGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSGameCore.h; path = Classes/WSGameCore.h; sourceTree = "<group>"; };
+		ADD1051716F0A92B003894F6 /* WSAISnake.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSAISnake.cpp; path = Classes/WSAISnake.cpp; sourceTree = "<group>"; };
+		ADD1051816F0A92B003894F6 /* WSAISnake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSAISnake.h; path = Classes/WSAISnake.h; sourceTree = "<group>"; };
 		ADFAABB416E8E7DE00C60519 /* snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFAABB716E8E7DE00C60519 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ADFAABB916E8E7DE00C60519 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -676,10 +679,10 @@
 		AD1C6D8116F021CD0035E2FD /* view */ = {
 			isa = PBXGroup;
 			children = (
-				ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */,
 				ADD1050F16F098C8003894F6 /* WSGameLayer.h */,
-				ADD1051016F098C8003894F6 /* WSGameScene.cpp */,
+				ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */,
 				ADD1051116F098C8003894F6 /* WSGameScene.h */,
+				ADD1051016F098C8003894F6 /* WSGameScene.cpp */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -1568,6 +1571,8 @@
 			children = (
 				ADFAAE6016E8EC4200C60519 /* WSSnake.h */,
 				ADFAAE5F16E8EC4200C60519 /* WSSnake.cpp */,
+				ADD1051716F0A92B003894F6 /* WSAISnake.cpp */,
+				ADD1051816F0A92B003894F6 /* WSAISnake.h */,
 				ADFAAE6816E901B800C60519 /* WSMap.h */,
 				ADFAAE6716E901B800C60519 /* WSMap.cpp */,
 				ADFAAE6616E8ED5D00C60519 /* WSType.h */,
@@ -1827,6 +1832,7 @@
 				ADD1051216F098C8003894F6 /* WSGameLayer.cpp in Sources */,
 				ADD1051316F098C8003894F6 /* WSGameScene.cpp in Sources */,
 				ADD1051616F098D1003894F6 /* WSGameCore.cpp in Sources */,
+				ADD1051916F0A92B003894F6 /* WSAISnake.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

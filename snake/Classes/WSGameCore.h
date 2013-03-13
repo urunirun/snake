@@ -62,6 +62,8 @@ public:
     void            startGame();
     void            tick(float_t dt);         //schedule All frames
     void            update(float_t dt);        //schedule time
+    
+    ~WSGameCore();
 };
 
 #endif /* defined(__snake__WSGameCore__) */

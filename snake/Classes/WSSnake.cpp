@@ -71,6 +71,9 @@ WSSnake::move()
     _positions->removeObjectAtIndex(_positions->count()-1);
 }
 
+void
+WSSnake::clacDirection(WSSnake* snakeA, WSMap* map, WSPoint* food){}
+
 WSSnake::~WSSnake()
 {
     _positions->release();

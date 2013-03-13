@@ -170,9 +170,58 @@ WSGameCore::colisionDetection()
 }
 
 void
-WSGameCore::tick(float_t dt)
+WSGameCore::genFoodPos()
+{
+    std::vector< std::vector<bool> > map(_map->getWidth());
+    for (int i=0; i<_map->getWidth(); i++) {
+        map.push_back(std::vector<bool>(_map->getHeight()));
+        for (int j=0; j<_map->getHeight(); j++) {
+            map[i][j] = _map->checkPointlegal(WSPoint::pointWithInt(i, j));
+        }
+    }
+    
+    for (int i=0; i<_snakeA->getPositions()->count(); i++) {
+        WSPoint* pos = (WSPoint*)_snakeA->getPositions()->objectAtIndex(i);
+        map[pos->x][pos->y] = false;
+    }
+    
+    for (int i=0; i<_snakeB->getPositions()->count(); i++) {
+        WSPoint* pos = (WSPoint*)_snakeB->getPositions()->objectAtIndex(i);
+        map[pos->x][pos->y] = false;
+    }
+    
+    std::vector<WSPoint*> emptyArray;
+    for (int i=0; i<_map->getWidth(); i++) {
+        for (int j=0; j<_map->getHeight(); j++) {
+            if (map[i][j])
+                emptyArray.push_back(WSPoint::pointWithInt(i, j));
+        }
+    }
+    
+    srand(time(NULL));
+    uint16_t pos = random() % emptyArray.size();
+    _foodPosition->x =  emptyArray[ pos ]->x;
+    _foodPosition->y =  emptyArray[ pos ]->y;
+}
+
+void
+WSGameCore::gameOver()
 {
     
+}
+
+void
+WSGameCore::tick(float_t dt)
+{
+    if (_mode == kComputer)
+    {
+        _snakeB->clacDirection(_snakeA, _map, _foodPosition);
+    }
+    
+    if (_mode == kShow)
+    {
+        _snakeA->clacDirection(_snakeA, _map, _foodPosition);
+    }
     
     WSPoint* snakeANextHeadPos = _snakeA->getNextHeadPos();
     if (_map->checkPointlegal(snakeANextHeadPos))
@@ -233,4 +282,19 @@ WSGameCore::update(float_t dt)
 {
     _remainTime += dt;
     _gameScene->drawTimeLabel();
+}
+
+WSGameCore::~WSGameCore()
+{
+    delete _snakeA;
+    _snakeA = NULL;
+    
+    delete _snakeB;
+    _snakeB = NULL;
+    
+    delete _map;
+    _map = NULL;
+    
+    _foodPosition->release();
+    _foodPosition = NULL;
 }

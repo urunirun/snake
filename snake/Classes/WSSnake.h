@@ -14,6 +14,7 @@
 #include "WSType.h"
 #include <vector>
 #include "CCArray.h"
+#include "WSMap.h"
 
 class WSSnake {
 protected:
@@ -30,7 +31,7 @@ public:
     void                initWithDirectionLengthAndFirstPos(WSSnakeDirection direction, uint16_t length, WSPoint* pos);
     void                move();
     WSPoint*            getNextHeadPos();
-    
+    void                clacDirection(WSSnake* snakeA, WSMap* map, WSPoint* food);
     ~WSSnake();
 };
 

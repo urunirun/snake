@@ -7,3 +7,14 @@
 //
 
 #include "WSGameScene.h"
+void
+WSGameScene::drawScene()
+{
+    
+}
+
+void
+WSGameScene::drawTimeLabel()
+{
+    
+}
