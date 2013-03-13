@@ -9,6 +9,7 @@
 #include "WSSnake.h"
 
 using namespace cocos2d;
+const static int d[4][2] = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
 
 uint16_t
 WSSnake::getSnakeLength()
@@ -34,10 +35,17 @@ WSSnake::getPositions()
     return _positions;
 }
 
-void
-WSSnake::addSnakeBody(WSPoint* point)
+WSPoint*
+WSSnake::getNextHeadPos()
 {
-    _positions->insertObject(point, 0);
+    WSPoint* point = (WSPoint*) _positions->objectAtIndex(0);
+    return WSPoint::pointWithInt(point->x + d[_direction][0], point->y + d[_direction][1]);
+}
+
+void
+WSSnake::addSnakeBody()
+{
+    _positions->insertObject(this->getNextHeadPos(), 0);
 }
 
 void
@@ -45,7 +53,7 @@ WSSnake::initWithDirectionLengthAndFirstPos(WSSnakeDirection direction,
                                             uint16_t length,
                                             WSPoint *pos)
 {
-    const int d[4][2] = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
+    
     _direction = direction;
     _positions = CCArray::createWithObject(pos);
     
@@ -54,6 +62,13 @@ WSSnake::initWithDirectionLengthAndFirstPos(WSSnakeDirection direction,
                                                 pos->y + d[direction][1]);
         _positions->addObject(point);
     }
+}
+
+void
+WSSnake::move()
+{
+    this->addSnakeBody();
+    _positions->removeObjectAtIndex(_positions->count()-1);
 }
 
 WSSnake::~WSSnake()

@@ -31,6 +31,11 @@ public:
         point->autorelease();
         return point;
     }
+    
+    bool operator == (WSPoint* b)
+    {
+        return x == b->x && y == b-> y;
+    }
 };
 
 
@@ -51,4 +56,11 @@ enum WSGameMode {
     kComputer,
     kShow
     };
+
+enum WSGameOverFlag {
+    kNoBodyDie = 0,
+    kSnakeADie = 1<<0,
+    kSnakeBDie = 1<<1
+    };
+
 #endif

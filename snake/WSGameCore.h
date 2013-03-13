@@ -34,9 +34,15 @@ private:
     uint16_t        _scoreB;
     
     float_t         _speed;                 //schedule time interval
-    uint16_t        _remainTime;
+    float_t         _remainTime;
     
     WSGameScene*    _gameScene;
+    WSGameOverFlag  _gameOverFlag;
+    
+    void            gameOver();
+    void            colisionDetection();
+    void            genFoodPos();
+    
 public:
     WSSnake*        getSnakeA();
     WSSnake*        getSnakeB();
@@ -47,7 +53,7 @@ public:
     uint16_t        getGameLevel();
     uint16_t        getScoreA();
     uint16_t        getScoreB();
-    uint16_t        getRemainTime();
+    float_t         getRemainTime();
     
     void            initWithGameModeAndMapName(WSGameMode   mode,
                                                uint16_t     level,

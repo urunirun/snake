@@ -25,9 +25,12 @@ public:
     void                setDirection(WSSnakeDirection   direction);
     
     cocos2d::CCArray*   getPositions();
-    void                addSnakeBody(WSPoint* point);
+    void                addSnakeBody();
 
     void                initWithDirectionLengthAndFirstPos(WSSnakeDirection direction, uint16_t length, WSPoint* pos);
+    void                move();
+    WSPoint*            getNextHeadPos();
+    
     ~WSSnake();
 };
 

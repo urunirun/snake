@@ -67,7 +67,7 @@ WSGameCore::getScoreB()
     return _scoreB;
 }
 
-uint16_t
+float_t
 WSGameCore::getRemainTime()
 {
     return _remainTime;
@@ -138,13 +138,99 @@ WSGameCore::startGame()
 }
 
 void
+WSGameCore::colisionDetection()
+{
+    WSPoint* snakeHeadA = _snakeA->getNextHeadPos();
+    WSPoint* snakeHeadB = _snakeB->getNextHeadPos();
+    
+    if ((*snakeHeadA) == snakeHeadB)
+    {
+        _gameOverFlag = (WSGameOverFlag)(kSnakeADie | kSnakeBDie);
+        return;
+    }
+    
+    for (int i=0; i<_snakeA->getPositions()->count(); i++) {
+        WSPoint* point = (WSPoint*)_snakeA->getPositions()->objectAtIndex(i);
+        if ((*snakeHeadB) == point)
+        {
+            _gameOverFlag = (WSGameOverFlag) (_gameOverFlag | kSnakeBDie);
+            break;
+        }
+    }
+    
+    for (int i=0; i<_snakeB->getPositions()->count(); i++)
+    {
+        WSPoint* point = (WSPoint*) _snakeB->getPositions()->objectAtIndex(i);
+        if ((*snakeHeadA) == point)
+        {
+            _gameOverFlag = (WSGameOverFlag) (_gameOverFlag | kSnakeADie);
+            break;
+        }
+    }
+}
+
+void
 WSGameCore::tick(float_t dt)
 {
     
+    
+    WSPoint* snakeANextHeadPos = _snakeA->getNextHeadPos();
+    if (_map->checkPointlegal(snakeANextHeadPos))
+    {
+        if ((*snakeANextHeadPos) == _foodPosition)
+        {
+            _foodPosition->x = -1;
+            _foodPosition->y = -1;
+            _scoreA ++;
+            _snakeA->addSnakeBody();
+        }
+        else
+            _snakeA->move();
+    }
+    else
+    {
+        _gameOverFlag = (WSGameOverFlag)(_gameOverFlag | kSnakeADie);
+    }
+    
+    if (_mode == kComputer)
+    {
+        WSPoint* snakeBNextHeadPos = _snakeB->getNextHeadPos();
+        if (_map->checkPointlegal(snakeBNextHeadPos))
+        {
+            if ((*snakeBNextHeadPos) == _foodPosition)
+            {
+                _foodPosition->x = -1;
+                _foodPosition->y = -1;
+                _scoreB ++;
+                _snakeB->addSnakeBody();
+            }
+            else
+                _snakeB->move();
+        }
+        else
+        {
+            _gameOverFlag = (WSGameOverFlag) (_gameOverFlag | kSnakeBDie);
+        }
+    }
+    
+    this->colisionDetection();
+    
+    if (_gameOverFlag != kNoBodyDie)
+    {
+        gameOver();
+    }
+    
+    if (_foodPosition->x == -1 && _foodPosition->y == -1)
+    {
+        genFoodPos();
+    }
+    
+    _gameScene->drawScene();
 }
 
 void
 WSGameCore::update(float_t dt)
 {
-    
+    _remainTime += dt;
+    _gameScene->drawTimeLabel();
 }

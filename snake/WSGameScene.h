@@ -19,6 +19,7 @@ class WSGameScene:public CCScene {
     
 public:
     void                drawScene();
+    void                drawTimeLabel();
 };
 
 
