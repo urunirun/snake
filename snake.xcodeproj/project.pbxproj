@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AD1C6D7D16F0142E0035E2FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */; };
-		AD1C6D8016F021760035E2FD /* WSGameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD1C6D7E16F021760035E2FD /* WSGameLayer.cpp */; };
-		AD1C6D8416F021E60035E2FD /* WSGameCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD1C6D8216F021E60035E2FD /* WSGameCore.cpp */; };
-		AD365A8416F02F5F002449B0 /* WSGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD365A8216F02F5F002449B0 /* WSGameScene.cpp */; };
+		ADD1051216F098C8003894F6 /* WSGameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */; };
+		ADD1051316F098C8003894F6 /* WSGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1051016F098C8003894F6 /* WSGameScene.cpp */; };
+		ADD1051616F098D1003894F6 /* WSGameCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1051416F098D1003894F6 /* WSGameCore.cpp */; };
 		ADFAABB816E8E7DE00C60519 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFAABB716E8E7DE00C60519 /* QuartzCore.framework */; };
 		ADFAABBA16E8E7DE00C60519 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFAABB916E8E7DE00C60519 /* OpenGLES.framework */; };
 		ADFAABBC16E8E7DE00C60519 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFAABBB16E8E7DE00C60519 /* OpenAL.framework */; };
@@ -212,12 +212,12 @@
 
 /* Begin PBXFileReference section */
 		AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		AD1C6D7E16F021760035E2FD /* WSGameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WSGameLayer.cpp; sourceTree = "<group>"; };
-		AD1C6D7F16F021760035E2FD /* WSGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGameLayer.h; sourceTree = "<group>"; };
-		AD1C6D8216F021E60035E2FD /* WSGameCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WSGameCore.cpp; sourceTree = "<group>"; };
-		AD1C6D8316F021E60035E2FD /* WSGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGameCore.h; sourceTree = "<group>"; };
-		AD365A8216F02F5F002449B0 /* WSGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WSGameScene.cpp; sourceTree = "<group>"; };
-		AD365A8316F02F5F002449B0 /* WSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGameScene.h; sourceTree = "<group>"; };
+		ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameLayer.cpp; path = Classes/WSGameLayer.cpp; sourceTree = "<group>"; };
+		ADD1050F16F098C8003894F6 /* WSGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSGameLayer.h; path = Classes/WSGameLayer.h; sourceTree = "<group>"; };
+		ADD1051016F098C8003894F6 /* WSGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameScene.cpp; path = Classes/WSGameScene.cpp; sourceTree = "<group>"; };
+		ADD1051116F098C8003894F6 /* WSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSGameScene.h; path = Classes/WSGameScene.h; sourceTree = "<group>"; };
+		ADD1051416F098D1003894F6 /* WSGameCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameCore.cpp; path = Classes/WSGameCore.cpp; sourceTree = "<group>"; };
+		ADD1051516F098D1003894F6 /* WSGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSGameCore.h; path = Classes/WSGameCore.h; sourceTree = "<group>"; };
 		ADFAABB416E8E7DE00C60519 /* snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFAABB716E8E7DE00C60519 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ADFAABB916E8E7DE00C60519 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -676,10 +676,10 @@
 		AD1C6D8116F021CD0035E2FD /* view */ = {
 			isa = PBXGroup;
 			children = (
-				AD1C6D7F16F021760035E2FD /* WSGameLayer.h */,
-				AD1C6D7E16F021760035E2FD /* WSGameLayer.cpp */,
-				AD365A8316F02F5F002449B0 /* WSGameScene.h */,
-				AD365A8216F02F5F002449B0 /* WSGameScene.cpp */,
+				ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */,
+				ADD1050F16F098C8003894F6 /* WSGameLayer.h */,
+				ADD1051016F098C8003894F6 /* WSGameScene.cpp */,
+				ADD1051116F098C8003894F6 /* WSGameScene.h */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -687,8 +687,8 @@
 		AD1C6D8516F021EC0035E2FD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AD1C6D8316F021E60035E2FD /* WSGameCore.h */,
-				AD1C6D8216F021E60035E2FD /* WSGameCore.cpp */,
+				ADD1051416F098D1003894F6 /* WSGameCore.cpp */,
+				ADD1051516F098D1003894F6 /* WSGameCore.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1824,9 +1824,9 @@
 				ADFAAE5616E8E7E100C60519 /* AppDelegate.cpp in Sources */,
 				ADFAAE6116E8EC4200C60519 /* WSSnake.cpp in Sources */,
 				ADFAAE6916E901B800C60519 /* WSMap.cpp in Sources */,
-				AD1C6D8016F021760035E2FD /* WSGameLayer.cpp in Sources */,
-				AD1C6D8416F021E60035E2FD /* WSGameCore.cpp in Sources */,
-				AD365A8416F02F5F002449B0 /* WSGameScene.cpp in Sources */,
+				ADD1051216F098C8003894F6 /* WSGameLayer.cpp in Sources */,
+				ADD1051316F098C8003894F6 /* WSGameScene.cpp in Sources */,
+				ADD1051616F098D1003894F6 /* WSGameCore.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
