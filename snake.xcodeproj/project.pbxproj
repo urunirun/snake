@@ -202,6 +202,9 @@
 		ADFAAE4D16E8E7E100C60519 /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE4C16E8E7E100C60519 /* HttpClient.cpp */; };
 		ADFAAE5616E8E7E100C60519 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE5516E8E7E100C60519 /* AppDelegate.cpp */; };
 		ADFAAE5916E8E7E100C60519 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE5816E8E7E100C60519 /* HelloWorldScene.cpp */; };
+		ADFAAE6116E8EC4200C60519 /* WSSnake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE5F16E8EC4200C60519 /* WSSnake.cpp */; };
+		ADFAAE6916E901B800C60519 /* WSMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE6716E901B800C60519 /* WSMap.cpp */; };
+		ADFAAE6B16E9B6DE00C60519 /* gameBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFAAE6A16E9B6DE00C60519 /* gameBackGround.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -634,6 +637,12 @@
 		ADFAAE5516E8E7E100C60519 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		ADFAAE5716E8E7E100C60519 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		ADFAAE5816E8E7E100C60519 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		ADFAAE5F16E8EC4200C60519 /* WSSnake.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSSnake.cpp; path = Classes/WSSnake.cpp; sourceTree = "<group>"; };
+		ADFAAE6016E8EC4200C60519 /* WSSnake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSSnake.h; path = Classes/WSSnake.h; sourceTree = "<group>"; };
+		ADFAAE6616E8ED5D00C60519 /* WSType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WSType.h; path = Classes/WSType.h; sourceTree = "<group>"; };
+		ADFAAE6716E901B800C60519 /* WSMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSMap.cpp; path = Classes/WSMap.cpp; sourceTree = "<group>"; };
+		ADFAAE6816E901B800C60519 /* WSMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSMap.h; path = Classes/WSMap.h; sourceTree = "<group>"; };
+		ADFAAE6A16E9B6DE00C60519 /* gameBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameBackGround.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -703,6 +712,7 @@
 		ADFAABC816E8E7DE00C60519 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ADFAAE6A16E9B6DE00C60519 /* gameBackGround.png */,
 				ADFAABC916E8E7DE00C60519 /* CloseNormal.png */,
 				ADFAABCB16E8E7DE00C60519 /* CloseSelected.png */,
 				ADFAABCD16E8E7DE00C60519 /* Default.png */,
@@ -1519,8 +1529,21 @@
 				ADFAAE5516E8E7E100C60519 /* AppDelegate.cpp */,
 				ADFAAE5716E8E7E100C60519 /* HelloWorldScene.h */,
 				ADFAAE5816E8E7E100C60519 /* HelloWorldScene.cpp */,
+				ADFAAE6216E8ECDA00C60519 /* model */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		ADFAAE6216E8ECDA00C60519 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				ADFAAE6016E8EC4200C60519 /* WSSnake.h */,
+				ADFAAE5F16E8EC4200C60519 /* WSSnake.cpp */,
+				ADFAAE6816E901B800C60519 /* WSMap.h */,
+				ADFAAE6716E901B800C60519 /* WSMap.cpp */,
+				ADFAAE6616E8ED5D00C60519 /* WSType.h */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1585,6 +1608,7 @@
 				ADFAABDC16E8E7DE00C60519 /* Icon@2x.png in Resources */,
 				ADFAABDE16E8E7DE00C60519 /* iTunesArtwork in Resources */,
 				ADFAAC7016E8E7DF00C60519 /* ChangeLog in Resources */,
+				ADFAAE6B16E9B6DE00C60519 /* gameBackGround.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1769,6 +1793,8 @@
 				ADFAAE4D16E8E7E100C60519 /* HttpClient.cpp in Sources */,
 				ADFAAE5616E8E7E100C60519 /* AppDelegate.cpp in Sources */,
 				ADFAAE5916E8E7E100C60519 /* HelloWorldScene.cpp in Sources */,
+				ADFAAE6116E8EC4200C60519 /* WSSnake.cpp in Sources */,
+				ADFAAE6916E901B800C60519 /* WSMap.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1845,6 +1871,7 @@
 				GCC_PREFIX_HEADER = snake/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = snake/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/snake/libs/cocos2dx/platform/third_party/ios/libraries\"",
@@ -1867,6 +1894,7 @@
 				GCC_PREFIX_HEADER = snake/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = snake/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/snake/libs/cocos2dx/platform/third_party/ios/libraries\"",
