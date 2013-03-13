@@ -7,10 +7,10 @@
 //
 
 #include "WSGameScene.h"
+
 void
 WSGameScene::drawScene()
 {
-    
 }
 
 void
