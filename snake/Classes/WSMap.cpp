@@ -8,7 +8,8 @@
 
 #include "WSMap.h"
 
-void WSMap::initWithFile(std::string fileName)
+void
+WSMap::initWithFile(std::string fileName)
 {
     const char* path = cocos2d::CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(fileName.c_str());
     
@@ -35,17 +36,32 @@ void WSMap::initWithFile(std::string fileName)
     _secondSnakeHead->initWithInt(x, y);
 }
 
-uint16_t WSMap::getWidth()
+uint16_t
+WSMap::getWidth()
 {
     return _width;
 }
 
-uint16_t WSMap::getHeight()
+uint16_t
+WSMap::getHeight()
 {
     return _height;
 }
 
-WSMapNode WSMap::getMapNodeByXY(uint16_t x, uint16_t y)
+WSPoint*
+WSMap::getFirstSnakeHead()
+{
+    return _firstSnakeHead;
+}
+
+WSPoint*
+WSMap::getSecondSnakeHead()
+{
+    return _secondSnakeHead;
+}
+
+WSMapNode
+WSMap::getMapNodeByXY(uint16_t x, uint16_t y)
 {
     if (checkPointlegal(WSPoint::pointWithInt(x, y)))
         return _map[x][y];
@@ -53,7 +69,8 @@ WSMapNode WSMap::getMapNodeByXY(uint16_t x, uint16_t y)
         return kEdge;
 }
 
-bool WSMap::checkPointlegal(WSPoint *point)
+bool
+WSMap::checkPointlegal(WSPoint *point)
 {
     if (point->x < 0 || point -> x >= _width)  return false;
     if (point->y < 0 || point -> y >= _height) return false;

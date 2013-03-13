@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1C6D7D16F0142E0035E2FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */; };
+		AD1C6D8016F021760035E2FD /* WSGameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD1C6D7E16F021760035E2FD /* WSGameLayer.cpp */; };
+		AD1C6D8416F021E60035E2FD /* WSGameCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD1C6D8216F021E60035E2FD /* WSGameCore.cpp */; };
+		AD365A8416F02F5F002449B0 /* WSGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD365A8216F02F5F002449B0 /* WSGameScene.cpp */; };
 		ADFAABB816E8E7DE00C60519 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFAABB716E8E7DE00C60519 /* QuartzCore.framework */; };
 		ADFAABBA16E8E7DE00C60519 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFAABB916E8E7DE00C60519 /* OpenGLES.framework */; };
 		ADFAABBC16E8E7DE00C60519 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFAABBB16E8E7DE00C60519 /* OpenAL.framework */; };
@@ -201,13 +205,19 @@
 		ADFAAE4916E8E7E100C60519 /* CCTableViewCell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE4816E8E7E100C60519 /* CCTableViewCell.cpp */; };
 		ADFAAE4D16E8E7E100C60519 /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE4C16E8E7E100C60519 /* HttpClient.cpp */; };
 		ADFAAE5616E8E7E100C60519 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE5516E8E7E100C60519 /* AppDelegate.cpp */; };
-		ADFAAE5916E8E7E100C60519 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE5816E8E7E100C60519 /* HelloWorldScene.cpp */; };
 		ADFAAE6116E8EC4200C60519 /* WSSnake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE5F16E8EC4200C60519 /* WSSnake.cpp */; };
 		ADFAAE6916E901B800C60519 /* WSMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADFAAE6716E901B800C60519 /* WSMap.cpp */; };
 		ADFAAE6B16E9B6DE00C60519 /* gameBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = ADFAAE6A16E9B6DE00C60519 /* gameBackGround.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AD1C6D7E16F021760035E2FD /* WSGameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WSGameLayer.cpp; sourceTree = "<group>"; };
+		AD1C6D7F16F021760035E2FD /* WSGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGameLayer.h; sourceTree = "<group>"; };
+		AD1C6D8216F021E60035E2FD /* WSGameCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WSGameCore.cpp; sourceTree = "<group>"; };
+		AD1C6D8316F021E60035E2FD /* WSGameCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGameCore.h; sourceTree = "<group>"; };
+		AD365A8216F02F5F002449B0 /* WSGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WSGameScene.cpp; sourceTree = "<group>"; };
+		AD365A8316F02F5F002449B0 /* WSGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGameScene.h; sourceTree = "<group>"; };
 		ADFAABB416E8E7DE00C60519 /* snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFAABB716E8E7DE00C60519 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ADFAABB916E8E7DE00C60519 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -635,8 +645,6 @@
 		ADFAAE5216E8E7E100C60519 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		ADFAAE5416E8E7E100C60519 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		ADFAAE5516E8E7E100C60519 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		ADFAAE5716E8E7E100C60519 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		ADFAAE5816E8E7E100C60519 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		ADFAAE5F16E8EC4200C60519 /* WSSnake.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSSnake.cpp; path = Classes/WSSnake.cpp; sourceTree = "<group>"; };
 		ADFAAE6016E8EC4200C60519 /* WSSnake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSSnake.h; path = Classes/WSSnake.h; sourceTree = "<group>"; };
 		ADFAAE6616E8ED5D00C60519 /* WSType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WSType.h; path = Classes/WSType.h; sourceTree = "<group>"; };
@@ -665,9 +673,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD1C6D8116F021CD0035E2FD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AD1C6D7F16F021760035E2FD /* WSGameLayer.h */,
+				AD1C6D7E16F021760035E2FD /* WSGameLayer.cpp */,
+				AD365A8316F02F5F002449B0 /* WSGameScene.h */,
+				AD365A8216F02F5F002449B0 /* WSGameScene.cpp */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		AD1C6D8516F021EC0035E2FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AD1C6D8316F021E60035E2FD /* WSGameCore.h */,
+				AD1C6D8216F021E60035E2FD /* WSGameCore.cpp */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		ADFAABAB16E8E7DE00C60519 = {
 			isa = PBXGroup;
 			children = (
+				AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */,
 				ADFAABC716E8E7DE00C60519 /* snake */,
 				ADFAABB616E8E7DE00C60519 /* Frameworks */,
 				ADFAABB516E8E7DE00C60519 /* Products */,
@@ -1527,8 +1556,8 @@
 			children = (
 				ADFAAE5416E8E7E100C60519 /* AppDelegate.h */,
 				ADFAAE5516E8E7E100C60519 /* AppDelegate.cpp */,
-				ADFAAE5716E8E7E100C60519 /* HelloWorldScene.h */,
-				ADFAAE5816E8E7E100C60519 /* HelloWorldScene.cpp */,
+				AD1C6D8516F021EC0035E2FD /* Controller */,
+				AD1C6D8116F021CD0035E2FD /* view */,
 				ADFAAE6216E8ECDA00C60519 /* model */,
 			);
 			name = Classes;
@@ -1609,6 +1638,7 @@
 				ADFAABDE16E8E7DE00C60519 /* iTunesArtwork in Resources */,
 				ADFAAC7016E8E7DF00C60519 /* ChangeLog in Resources */,
 				ADFAAE6B16E9B6DE00C60519 /* gameBackGround.png in Resources */,
+				AD1C6D7D16F0142E0035E2FD /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1792,9 +1822,11 @@
 				ADFAAE4916E8E7E100C60519 /* CCTableViewCell.cpp in Sources */,
 				ADFAAE4D16E8E7E100C60519 /* HttpClient.cpp in Sources */,
 				ADFAAE5616E8E7E100C60519 /* AppDelegate.cpp in Sources */,
-				ADFAAE5916E8E7E100C60519 /* HelloWorldScene.cpp in Sources */,
 				ADFAAE6116E8EC4200C60519 /* WSSnake.cpp in Sources */,
 				ADFAAE6916E901B800C60519 /* WSMap.cpp in Sources */,
+				AD1C6D8016F021760035E2FD /* WSGameLayer.cpp in Sources */,
+				AD1C6D8416F021E60035E2FD /* WSGameCore.cpp in Sources */,
+				AD365A8416F02F5F002449B0 /* WSGameScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1881,6 +1913,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1904,6 +1937,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1928,6 +1962,7 @@
 				ADFAAE5E16E8E7E100C60519 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
