@@ -9,7 +9,7 @@
 #include "AppDelegate.h"
 
 #include "cocos2d.h"
-
+#include "WSGameMenuScene.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate()
@@ -32,7 +32,12 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
-
+    
+    WSGameMenuScene* scene = new WSGameMenuScene;
+    scene->init();
+    pDirector->runWithScene(scene);
+    scene->autorelease();
+    
     return true;
 }
 

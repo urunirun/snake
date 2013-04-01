@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD1C6D7D16F0142E0035E2FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */; };
+		AD962B2D17096C0200541DB7 /* WSBackGroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD962B2B17096C0200541DB7 /* WSBackGroundLayer.cpp */; };
+		AD962B3017096DED00541DB7 /* WSGameMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD962B2E17096DEC00541DB7 /* WSGameMenuScene.cpp */; };
 		ADD1051216F098C8003894F6 /* WSGameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */; };
 		ADD1051316F098C8003894F6 /* WSGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1051016F098C8003894F6 /* WSGameScene.cpp */; };
 		ADD1051616F098D1003894F6 /* WSGameCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1051416F098D1003894F6 /* WSGameCore.cpp */; };
@@ -213,6 +215,10 @@
 
 /* Begin PBXFileReference section */
 		AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AD962B2B17096C0200541DB7 /* WSBackGroundLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSBackGroundLayer.cpp; path = Classes/WSBackGroundLayer.cpp; sourceTree = "<group>"; };
+		AD962B2C17096C0200541DB7 /* WSBackGroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSBackGroundLayer.h; path = Classes/WSBackGroundLayer.h; sourceTree = "<group>"; };
+		AD962B2E17096DEC00541DB7 /* WSGameMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameMenuScene.cpp; path = Classes/WSGameMenuScene.cpp; sourceTree = "<group>"; };
+		AD962B2F17096DEC00541DB7 /* WSGameMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSGameMenuScene.h; path = Classes/WSGameMenuScene.h; sourceTree = "<group>"; };
 		ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameLayer.cpp; path = Classes/WSGameLayer.cpp; sourceTree = "<group>"; };
 		ADD1050F16F098C8003894F6 /* WSGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSGameLayer.h; path = Classes/WSGameLayer.h; sourceTree = "<group>"; };
 		ADD1051016F098C8003894F6 /* WSGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameScene.cpp; path = Classes/WSGameScene.cpp; sourceTree = "<group>"; };
@@ -683,6 +689,10 @@
 				ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */,
 				ADD1051116F098C8003894F6 /* WSGameScene.h */,
 				ADD1051016F098C8003894F6 /* WSGameScene.cpp */,
+				AD962B2C17096C0200541DB7 /* WSBackGroundLayer.h */,
+				AD962B2B17096C0200541DB7 /* WSBackGroundLayer.cpp */,
+				AD962B2E17096DEC00541DB7 /* WSGameMenuScene.cpp */,
+				AD962B2F17096DEC00541DB7 /* WSGameMenuScene.h */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -1833,6 +1843,8 @@
 				ADD1051316F098C8003894F6 /* WSGameScene.cpp in Sources */,
 				ADD1051616F098D1003894F6 /* WSGameCore.cpp in Sources */,
 				ADD1051916F0A92B003894F6 /* WSAISnake.cpp in Sources */,
+				AD962B2D17096C0200541DB7 /* WSBackGroundLayer.cpp in Sources */,
+				AD962B3017096DED00541DB7 /* WSGameMenuScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
