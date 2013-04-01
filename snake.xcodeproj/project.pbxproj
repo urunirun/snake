@@ -10,6 +10,8 @@
 		AD1C6D7D16F0142E0035E2FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */; };
 		AD962B2D17096C0200541DB7 /* WSBackGroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD962B2B17096C0200541DB7 /* WSBackGroundLayer.cpp */; };
 		AD962B3017096DED00541DB7 /* WSGameMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD962B2E17096DEC00541DB7 /* WSGameMenuScene.cpp */; };
+		AD962B331709757A00541DB7 /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = AD962B311709757A00541DB7 /* joystick.png */; };
+		AD962B341709757A00541DB7 /* menuLayer.png in Resources */ = {isa = PBXBuildFile; fileRef = AD962B321709757A00541DB7 /* menuLayer.png */; };
 		ADD1051216F098C8003894F6 /* WSGameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */; };
 		ADD1051316F098C8003894F6 /* WSGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1051016F098C8003894F6 /* WSGameScene.cpp */; };
 		ADD1051616F098D1003894F6 /* WSGameCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD1051416F098D1003894F6 /* WSGameCore.cpp */; };
@@ -219,6 +221,8 @@
 		AD962B2C17096C0200541DB7 /* WSBackGroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSBackGroundLayer.h; path = Classes/WSBackGroundLayer.h; sourceTree = "<group>"; };
 		AD962B2E17096DEC00541DB7 /* WSGameMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameMenuScene.cpp; path = Classes/WSGameMenuScene.cpp; sourceTree = "<group>"; };
 		AD962B2F17096DEC00541DB7 /* WSGameMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSGameMenuScene.h; path = Classes/WSGameMenuScene.h; sourceTree = "<group>"; };
+		AD962B311709757A00541DB7 /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
+		AD962B321709757A00541DB7 /* menuLayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuLayer.png; sourceTree = "<group>"; };
 		ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameLayer.cpp; path = Classes/WSGameLayer.cpp; sourceTree = "<group>"; };
 		ADD1050F16F098C8003894F6 /* WSGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSGameLayer.h; path = Classes/WSGameLayer.h; sourceTree = "<group>"; };
 		ADD1051016F098C8003894F6 /* WSGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSGameScene.cpp; path = Classes/WSGameScene.cpp; sourceTree = "<group>"; };
@@ -754,6 +758,8 @@
 		ADFAABC816E8E7DE00C60519 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD962B311709757A00541DB7 /* joystick.png */,
+				AD962B321709757A00541DB7 /* menuLayer.png */,
 				ADFAAE6A16E9B6DE00C60519 /* gameBackGround.png */,
 				ADFAABC916E8E7DE00C60519 /* CloseNormal.png */,
 				ADFAABCB16E8E7DE00C60519 /* CloseSelected.png */,
@@ -1654,6 +1660,8 @@
 				ADFAAC7016E8E7DF00C60519 /* ChangeLog in Resources */,
 				ADFAAE6B16E9B6DE00C60519 /* gameBackGround.png in Resources */,
 				AD1C6D7D16F0142E0035E2FD /* Default-568h@2x.png in Resources */,
+				AD962B331709757A00541DB7 /* joystick.png in Resources */,
+				AD962B341709757A00541DB7 /* menuLayer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

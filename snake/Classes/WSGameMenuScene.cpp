@@ -19,6 +19,12 @@ WSGameMenuScene::init()
         this->addChild(_backGroundLayer);
         _backGroundLayer->autorelease();
         
+        CCSprite*   menuImage = CCSprite::create("menuLayer.png");
+        menuImage->setAnchorPoint(ccp(0, 1));
+        menuImage->setPosition(ccp(320, 520));
+        this->addChild(menuImage);
+        
+        
         return true;
     }
     return false;
