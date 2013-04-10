@@ -18,7 +18,7 @@ class WSGameLayer: public CCLayer {
 
     
 public:
-    
+    bool    init();
 };
 
 

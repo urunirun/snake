@@ -11,13 +11,16 @@
 
 #include <iostream>
 #include "cocos2d.h"
+
 #include "WSBackGroundLayer.h"
+#include "WSGameLayer.h"
 
 using namespace cocos2d;
 
 class WSGameMenuScene: public CCScene {
 private:
     WSBackGroundLayer*                  _backGroundLayer;
+    WSGameLayer*                        _gameLayer;
     
 public:
     bool                                init();
