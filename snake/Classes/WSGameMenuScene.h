@@ -16,20 +16,15 @@
 #include "WSGameLayer.h"
 #include "CCJoyStick.h"
 #include "WSGameScene.h"
+#include "WSGameBackGroundLayer.h"
+
 using namespace cocos2d;
 
-class WSGameMenuScene: public WSGameScene, CCJoyStickDelegate {
+class WSGameMenuScene: public WSGameScene {
 private:
-    WSBackGroundLayer*                  _backGroundLayer;
-    WSGameLayer*                        _gameLayer;
-    CCJoystick*                         _joyStick;
-    
-    void onCCJoyStickUpdate(CCNode* sender, float angle, CCPoint direction, float power);
-    void onCCJoyStickActivated(CCNode* sender){CC_UNUSED_PARAM(sender);}
-    void onCCJoyStickDeactivated(CCNode* sender){CC_UNUSED_PARAM(sender);}
-    
+    void                onCCJoyStickUpdate(CCNode* sender, float angle, CCPoint direction, float power);
 public:
-    bool                                init();
+    bool                init();
 };
 
 #endif /* defined(__snake__WSGameMenuScene__) */

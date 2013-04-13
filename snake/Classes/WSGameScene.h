@@ -14,18 +14,34 @@
 #include "cocos2d.h"
 #include "WSGameCore.h"
 
+#include "WSGameLayer.h"
+#include "WSGameBackGroundLayer.h"
+#include "WSBackGroundLayer.h"
+#include "CCJoyStick.h"
+
 using namespace cocos2d;
 class WSGameCore;
+class WSGameLayer;
+class WSGameBackGroundLayer;
 
-class WSGameScene:public CCScene {
+class WSGameScene:public CCScene, CCJoyStickDelegate{
 protected:
-    WSGameCore*         _gameCore;
+    WSGameCore*             _gameCore;
+    WSGameLayer*            _gameLayer;
+    WSGameBackGroundLayer*  _gameBackGroundLayer;
+    WSBackGroundLayer*      _backGroundLayer;
     
+    CCJoystick*             _joyStick;
+    
+    void                    onCCJoyStickUpdate(CCNode* sender, float angle, CCPoint direction, float power);
+    void                    onCCJoyStickActivated(CCNode* sender){CC_UNUSED_PARAM(sender);}
+    void                    onCCJoyStickDeactivated(CCNode* sender){CC_UNUSED_PARAM(sender);}
 public:
-    WSGameCore*         getGameCore();
+    WSGameCore*             getGameCore();
     
-    void                drawScene();
-    void                drawTimeLabel();
+    void                    drawScene();
+    void                    drawTimeLabel();
+    bool                    initWithGameCoreMode(WSGameMode mode);
 };
 
 

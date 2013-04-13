@@ -12,14 +12,17 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "WSGameScene.h"
+
 using namespace cocos2d;
+
+class WSGameScene;
 
 class WSGameLayer: public CCLayer {
 private:
     WSGameScene*                _gameScene;
-    
+    void                        drawSelf();
 public:
-    bool    initWithGameScene(WSGameScene* scene);
+    bool                        initWithGameScene(WSGameScene* scene);
 };
 
 

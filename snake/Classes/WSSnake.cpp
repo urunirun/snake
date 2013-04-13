@@ -58,8 +58,8 @@ WSSnake::initWithDirectionLengthAndFirstPos(WSSnakeDirection direction,
     _positions = CCArray::createWithObject(pos);
     
     for (int i=0; i<length-1; i++) {
-        WSPoint* point =  WSPoint::pointWithInt(pos->x + d[direction][0],
-                                                pos->y + d[direction][1]);
+        WSPoint* point =  WSPoint::pointWithInt(pos->x + (i+1)*d[direction][0],
+                                                pos->y + (i+1)*d[direction][1]);
         _positions->addObject(point);
     }
 }

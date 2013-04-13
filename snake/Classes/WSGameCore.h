@@ -12,6 +12,7 @@
 #include <iostream>
 
 #include "WSSnake.h"
+#include "WSAISnake.h"
 #include "WSMap.h"
 #include "WSType.h"
 #include "WSGameScene.h"

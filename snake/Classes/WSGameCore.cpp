@@ -86,11 +86,16 @@ WSGameCore::initWithGameModeAndMapName(WSGameMode   mode,
     {
         _map = new WSMap();
         if (_mode == kSingle)
+        {
             _map->initWithFile(kSingleMap);
+            _snakeA = new WSSnake();
+        }
         else
+        {
             _map->initWithFile(kShowMap);
+            _snakeA = new WSAISnake();
+        }
         
-        _snakeA = new WSSnake();
         _snakeA ->initWithDirectionLengthAndFirstPos(kRight, 4, _map->getFirstSnakeHead());
         _snakeB = NULL;
         _speed = kEasySpeed;

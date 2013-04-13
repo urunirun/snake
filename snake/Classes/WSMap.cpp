@@ -30,7 +30,6 @@ WSMap::initWithFile(std::string fileName)
             
             uint16_t tmp;
             fscanf(mapFile, "%hu", &tmp);
-            CCLOG("%d %d %c", j, i, tmp);
             _map[j][i] = (WSMapNode)tmp;
         }
     }

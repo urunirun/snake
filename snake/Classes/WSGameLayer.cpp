@@ -8,31 +8,49 @@
 
 #include "WSGameLayer.h"
 //#include "WSMap.h"
+void
+WSGameLayer::drawSelf()
+{
+    this->removeAllChildrenWithCleanup(true);
+    WSMap* map = _gameScene->getGameCore()->getGameMap();
+    
+    WSSnake* snake = _gameScene->getGameCore()->getSnakeA();
+    CCArray* arr = snake->getPositions();
+    
+    for (int i=0; i<arr->count(); i++) {
+        WSPoint* point = (WSPoint*) arr->objectAtIndex(i);
+        CCSprite* sprite = CCSprite::create("snake1.png");
+        CCLOG("%d %d", point->x, point->y);
+        
+        sprite->setAnchorPoint(ccp(0, 0));
+        sprite->setPosition(ccp(320+ point->x*sprite->boundingBox().size.width, 170 + (map->getHeight()-point->y-1)*sprite->boundingBox().size.height));
+        this->addChild(sprite);
+    }
+    
+    snake = _gameScene->getGameCore()->getSnakeB();
+    if (snake)
+    {
+        CCArray* arr = snake->getPositions();
+        
+        for (int i=0; i<arr->count(); i++) {
+            WSPoint* point = (WSPoint*) arr->objectAtIndex(i);
+            CCSprite* sprite = CCSprite::create("snake2.png");
+            CCLOG("%d %d", point->x, point->y);
+            
+            sprite->setAnchorPoint(ccp(0, 0));
+            sprite->setPosition(ccp(320+ point->x*sprite->boundingBox().size.width, 170 + (map->getHeight()-point->y-1)*sprite->boundingBox().size.height));
+            this->addChild(sprite);
+        }
+    }
+}
+
 bool
 WSGameLayer::initWithGameScene(WSGameScene *scene)
 {
     if (CCLayer::init())
     {
         _gameScene = scene;
-        
-        CCLayerColor* whiteBg = CCLayerColor::create(ccc4(255, 255, 255, 255), 500, 350);
-        whiteBg->setAnchorPoint(ccp(0, 0));
-        whiteBg->setPosition(ccp(320, 170));
-        this->addChild(whiteBg);
-        
-        WSMap* map = _gameScene->getGameCore()->getGameMap();
-        
-        for (int i=0; i<map->getHeight(); i++) {
-            for (int j=0; j<map->getWidth(); j++) {
-                if (map->getMapNodeByXY(j, i) == kEdge)
-                {
-                    CCSprite* sprite = CCSprite::create("edge.png");
-                    sprite->setAnchorPoint(ccp(0, 0));
-                    sprite->setPosition(ccp(320+ j*sprite->boundingBox().size.width, 170 + i*sprite->boundingBox().size.height));
-                    this->addChild(sprite);
-                }
-            }
-        }
+        this->drawSelf();
         
         return true;
     }
