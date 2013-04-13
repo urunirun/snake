@@ -19,6 +19,8 @@
 #include "cocos2d.h"
 using namespace cocos2d;
 
+class WSGameScene;
+
 class WSGameCore: public CCNode{  //why it is CCNode.. Because CCSchedule relay on CCObject
 private:
     WSSnake*        _snakeA;

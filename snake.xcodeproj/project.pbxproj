@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD1C6D7D16F0142E0035E2FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */; };
+		AD8071ED171938360061DAAA /* easy_map in Resources */ = {isa = PBXBuildFile; fileRef = AD8071EC171938360061DAAA /* easy_map */; };
+		AD8071F017193A970061DAAA /* edge.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8071EF17193A970061DAAA /* edge.png */; };
 		AD825A001715D89F00F67D49 /* CCJoyStick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD8259FE1715D89F00F67D49 /* CCJoyStick.cpp */; };
 		AD962B2D17096C0200541DB7 /* WSBackGroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD962B2B17096C0200541DB7 /* WSBackGroundLayer.cpp */; };
 		AD962B3017096DED00541DB7 /* WSGameMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD962B2E17096DEC00541DB7 /* WSGameMenuScene.cpp */; };
@@ -218,6 +220,8 @@
 
 /* Begin PBXFileReference section */
 		AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AD8071EC171938360061DAAA /* easy_map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = easy_map; sourceTree = "<group>"; };
+		AD8071EF17193A970061DAAA /* edge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edge.png; sourceTree = "<group>"; };
 		AD8259FE1715D89F00F67D49 /* CCJoyStick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCJoyStick.cpp; path = libs/CCJoyStick.cpp; sourceTree = "<group>"; };
 		AD8259FF1715D89F00F67D49 /* CCJoyStick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCJoyStick.h; path = libs/CCJoyStick.h; sourceTree = "<group>"; };
 		AD962B2B17096C0200541DB7 /* WSBackGroundLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WSBackGroundLayer.cpp; path = Classes/WSBackGroundLayer.cpp; sourceTree = "<group>"; };
@@ -692,10 +696,9 @@
 		AD1C6D8116F021CD0035E2FD /* view */ = {
 			isa = PBXGroup;
 			children = (
+				AD8071EE1719391A0061DAAA /* viewModel */,
 				ADD1050F16F098C8003894F6 /* WSGameLayer.h */,
 				ADD1050E16F098C8003894F6 /* WSGameLayer.cpp */,
-				ADD1051116F098C8003894F6 /* WSGameScene.h */,
-				ADD1051016F098C8003894F6 /* WSGameScene.cpp */,
 				AD962B2C17096C0200541DB7 /* WSBackGroundLayer.h */,
 				AD962B2B17096C0200541DB7 /* WSBackGroundLayer.cpp */,
 				AD962B2F17096DEC00541DB7 /* WSGameMenuScene.h */,
@@ -707,10 +710,21 @@
 		AD1C6D8516F021EC0035E2FD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ADD1051416F098D1003894F6 /* WSGameCore.cpp */,
 				ADD1051516F098D1003894F6 /* WSGameCore.h */,
+				ADD1051416F098D1003894F6 /* WSGameCore.cpp */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		AD8071EE1719391A0061DAAA /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ADD1051116F098C8003894F6 /* WSGameScene.h */,
+				ADD1051016F098C8003894F6 /* WSGameScene.cpp */,
+				AD8259FF1715D89F00F67D49 /* CCJoyStick.h */,
+				AD8259FE1715D89F00F67D49 /* CCJoyStick.cpp */,
+			);
+			name = viewModel;
 			sourceTree = "<group>";
 		};
 		ADFAABAB16E8E7DE00C60519 = {
@@ -761,6 +775,8 @@
 		ADFAABC816E8E7DE00C60519 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD8071EF17193A970061DAAA /* edge.png */,
+				AD8071EC171938360061DAAA /* easy_map */,
 				AD962B311709757A00541DB7 /* joystick.png */,
 				AD962B321709757A00541DB7 /* menuLayer.png */,
 				ADFAAE6A16E9B6DE00C60519 /* gameBackGround.png */,
@@ -1595,8 +1611,6 @@
 				ADFAAE6816E901B800C60519 /* WSMap.h */,
 				ADFAAE6716E901B800C60519 /* WSMap.cpp */,
 				ADFAAE6616E8ED5D00C60519 /* WSType.h */,
-				AD8259FF1715D89F00F67D49 /* CCJoyStick.h */,
-				AD8259FE1715D89F00F67D49 /* CCJoyStick.cpp */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1667,6 +1681,8 @@
 				AD1C6D7D16F0142E0035E2FD /* Default-568h@2x.png in Resources */,
 				AD962B331709757A00541DB7 /* joystick.png in Resources */,
 				AD962B341709757A00541DB7 /* menuLayer.png in Resources */,
+				AD8071ED171938360061DAAA /* easy_map in Resources */,
+				AD8071F017193A970061DAAA /* edge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

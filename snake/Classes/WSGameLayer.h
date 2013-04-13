@@ -11,14 +11,15 @@
 
 #include <iostream>
 #include "cocos2d.h"
-
+#include "WSGameScene.h"
 using namespace cocos2d;
 
 class WSGameLayer: public CCLayer {
-
+private:
+    WSGameScene*                _gameScene;
     
 public:
-    bool    init();
+    bool    initWithGameScene(WSGameScene* scene);
 };
 
 

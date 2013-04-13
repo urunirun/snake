@@ -8,12 +8,12 @@
 
 #include "WSGameCore.h"
 
-#define kSingleMap      ""
-#define kShowMap        ""
+#define kSingleMap      "easy_map"
+#define kShowMap        "easy_map"
 
-#define kComputerEasy   ""
-#define kComputerNormal ""
-#define kComputerHard   ""
+#define kComputerEasy   "easy_map"
+#define kComputerNormal "easy_map"
+#define kComputerHard   "easy_map"
 
 #define kEasySpeed      1.5
 #define kNormalSpeed    1.2

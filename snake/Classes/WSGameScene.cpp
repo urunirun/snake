@@ -18,3 +18,10 @@ WSGameScene::drawTimeLabel()
 {
     
 }
+
+WSGameCore*
+WSGameScene::getGameCore()
+{
+    return _gameCore;
+}
+

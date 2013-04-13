@@ -125,9 +125,9 @@ void CCJoystick::updateTouchPoint(CCPoint touchPoint)
     direction=ccp(cos(angle * (3.14159/180)),sin(angle * (3.14159/180)));
     
     
-    CCSprite *sticktexture=(CCSprite*)stick->getChildByTag(0);
-    stick->setScaleX(ccpDistance(ball->getPosition(), ccp(0, 0))/sticktexture->getTextureRect().size.width);
-    stick->setRotation(-angle);
+//    CCSprite *sticktexture=(CCSprite*)stick->getChildByTag(0);
+//    stick->setScaleX(ccpDistance(ball->getPosition(), ccp(0, 0))/sticktexture->getTextureRect().size.width);
+//    stick->setRotation(-angle);
 }
 
 void CCJoystick::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)

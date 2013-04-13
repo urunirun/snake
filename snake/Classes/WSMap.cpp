@@ -8,6 +8,10 @@
 
 #include "WSMap.h"
 
+#define kPtToPx 10
+#define kWidth 50
+#define kHegith 35
+
 void
 WSMap::initWithFile(std::string fileName)
 {
@@ -15,16 +19,22 @@ WSMap::initWithFile(std::string fileName)
     
     FILE* mapFile = fopen(path, "r");
     fscanf(mapFile, "%hu %hu", &_width, &_height);
-
+    
     for (int i=0; i<_width; i++) {
         _map.push_back(std::vector<WSMapNode>(_height));
-        for (int j=0; j<_height; j++)
+    }
+    
+    for (int i=0; i<_height; i++) {
+        for (int j=0; j<_width; j++)
         {
+            
             uint16_t tmp;
             fscanf(mapFile, "%hu", &tmp);
-            _map[i][j] = (WSMapNode)tmp;
+            CCLOG("%d %d %c", j, i, tmp);
+            _map[j][i] = (WSMapNode)tmp;
         }
     }
+    
     
     uint16_t x, y;
     fscanf(mapFile, "%hu %hu", &x, &y);
