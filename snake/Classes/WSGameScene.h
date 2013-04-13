@@ -39,13 +39,13 @@ protected:
     void                    startGame();
 public:
     WSGameCore*             getGameCore();
-    
+    void                    gameOver();
     void                    drawScene();
     void                    drawTimeLabel();
     bool                    initWithGameCoreModeAndLevel(WSGameMode mode, uint16_t level);
-    
-    void            tick(float_t dt);         //schedule All frames
-    void            update(float_t dt);        //schedule time
+    virtual void            btnClick();
+    void                    tick(float_t dt);         //schedule All frames
+    void                    update(float_t dt);        //schedule time
     
 };
 

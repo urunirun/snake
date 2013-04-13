@@ -64,19 +64,7 @@ WSSnake::initWithDirectionLengthAndFirstPos(WSSnakeDirection direction,
                                             uint16_t length,
                                             WSPoint *pos)
 {
-    
-    _direction = direction;
-    
-    WSSnakeDirection rev = this->getDirectionRev();
-    _positions = CCArray::createWithObject(pos);
-    
-    for (int i=0; i<length-1; i++) {
-        WSPoint* point =  WSPoint::pointWithInt(pos->x + (i+1)*d[rev][0],
-                                                pos->y + (i+1)*d[rev][1]);
-        _positions->addObject(point);
-    }
-    
-    _positions->retain();
+    this->resetSnake(direction, length, pos);
 }
 
 void
@@ -88,6 +76,58 @@ WSSnake::move()
 
 void
 WSSnake::calcDirection(WSSnake* snakeA, WSMap* map, WSPoint* food){
+    WSPoint* head = (WSPoint*) _positions->objectAtIndex(0);
+    
+    if (head->x < food->x)
+    {
+        if (kRight != this->getDirectionRev() && this->pointNotInSelf(WSPoint::pointWithInt(head->x + d[kRight][0], head->y+d[kRight][1])))
+        {
+            _direction = kRight;
+            return;
+        }
+
+        if (head->y < food->y)
+        {
+            if (kDown != this->getDirectionRev() && this->pointNotInSelf(WSPoint::pointWithInt(head->x + d[kDown][0], head->y+d[kDown][1])))
+            {
+                _direction = kDown;
+                return;
+            }
+        }
+        else
+        {
+            if (kUp != this->getDirectionRev() && this->pointNotInSelf(WSPoint::pointWithInt(head->x + d[kUp][0], head->y+d[kUp][1])))
+            {
+                _direction = kUp;
+                return;
+            }
+        }
+    }
+    else
+    {
+        if (kLeft != this->getDirectionRev() && this->pointNotInSelf(WSPoint::pointWithInt(head->x + d[kLeft][0], head->y+d[kLeft][1])))
+        {
+            _direction = kLeft;
+            return;
+        }
+        if (head->y < food->y)
+        {
+            if (kDown != this->getDirectionRev() && this->pointNotInSelf(WSPoint::pointWithInt(head->x + d[kDown][0], head->y+d[kDown][1])))
+            {
+                _direction = kDown;
+                return;
+            }
+        }
+        else
+        {
+            if (kUp != this->getDirectionRev() && this->pointNotInSelf(WSPoint::pointWithInt(head->x + d[kUp][0], head->y+d[kUp][1])))
+            {
+                _direction = kUp;
+                return;
+            }
+        }
+    }
+    
     WSSnakeDirection d = (WSSnakeDirection) (arc4random() % 4);
     while (d == this->getDirectionRev())
     {
@@ -95,6 +135,25 @@ WSSnake::calcDirection(WSSnake* snakeA, WSMap* map, WSPoint* food){
     }
     
     _direction = d;
+}
+
+void
+WSSnake:: resetSnake(WSSnakeDirection direction, uint16_t length, WSPoint* pos)
+{
+    if (_positions != NULL)
+        _positions->release();
+    
+    _direction = direction;
+    WSSnakeDirection rev = this->getDirectionRev();
+    _positions = CCArray::createWithObject(pos);
+    
+    for (int i=0; i<length-1; i++) {
+        WSPoint* point =  WSPoint::pointWithInt(pos->x + (i+1)*d[rev][0],
+                                                pos->y + (i+1)*d[rev][1]);
+        _positions->addObject(point);
+    }
+    
+    _positions->retain();
 }
 
 bool

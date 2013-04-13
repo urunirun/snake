@@ -10,6 +10,7 @@
 
 #include "cocos2d.h"
 #include "WSGameMenuScene.h"
+#include "WSGamePlayScene.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate()
@@ -34,6 +35,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setAnimationInterval(1.0 / 60);
     
     WSGameMenuScene* scene = new WSGameMenuScene;
+//    WSGamePlayScene* scene = new WSGamePlayScene;
+//    scene->initWithGameCoreModeAndLevel(kSingle, 0);
     scene->init();
     pDirector->runWithScene(scene);
     scene->autorelease();

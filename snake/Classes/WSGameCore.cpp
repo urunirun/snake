@@ -15,7 +15,7 @@
 #define kComputerNormal "easy_map"
 #define kComputerHard   "easy_map"
 
-#define kEasySpeed      .05
+#define kEasySpeed      1
 #define kNormalSpeed    1.2
 #define kHardSpeed      1
 
@@ -78,6 +78,18 @@ WSGameCore::getSpeed()
 {
     return _speed;
 }
+
+bool
+WSGameCore::getFin()
+{
+    return _fin;
+}
+WSGameOverFlag
+WSGameCore::getGameOverFlag()
+{
+    return _gameOverFlag;
+}
+
 void
 WSGameCore::initWithGameModeAndMapName(WSGameMode   mode,
                                        uint16_t     level,
@@ -86,6 +98,8 @@ WSGameCore::initWithGameModeAndMapName(WSGameMode   mode,
     _mode = mode;
     _level = level;
     _gameScene = gameScene;
+    _fin = false;
+    _gameOverFlag = kNoBodyDie;
     
     if (_mode == kSingle || _mode == kShow)
     {
@@ -110,12 +124,7 @@ WSGameCore::initWithGameModeAndMapName(WSGameMode   mode,
     
     if (_mode == kComputer)
     {
-        _snakeA = new WSSnake();
-        _snakeA -> initWithDirectionLengthAndFirstPos(kRight, 4, _map->getFirstSnakeHead());
-        
-        _snakeB = new WSSnake();
-        _snakeB -> initWithDirectionLengthAndFirstPos(kLeft, 4, _map->getSecondSnakeHead());
-        
+        _map = new WSMap();
         if (level == 0)
         {
             _speed = kEasySpeed;
@@ -136,6 +145,12 @@ WSGameCore::initWithGameModeAndMapName(WSGameMode   mode,
         
         _scoreA = 0;
         _scoreB = 0;
+        _snakeA = new WSSnake();
+        _snakeA -> initWithDirectionLengthAndFirstPos(kRight, 4, _map->getFirstSnakeHead());
+        
+        _snakeB = new WSSnake();
+        _snakeB -> initWithDirectionLengthAndFirstPos(kLeft, 4, _map->getSecondSnakeHead());
+
     }
     
     _foodPosition = new WSPoint;
@@ -214,7 +229,8 @@ WSGameCore::genFoodPos()
 void
 WSGameCore::gameOver()
 {
-    CCLOG("GameOver!!!!!!!!");
+    if (_gameOverFlag != kNoBodyDie)
+        _fin = true ;
 }
 
 void
@@ -235,8 +251,8 @@ WSGameCore::tick(float_t dt)
     {
         if ((*snakeANextHeadPos) == _foodPosition)
         {
-            _foodPosition->x = -1;
-            _foodPosition->y = -1;
+            _foodPosition->x = 1000;
+            _foodPosition->y = 1000;
             _scoreA ++;
             _snakeA->addSnakeBody();
         }
@@ -248,6 +264,7 @@ WSGameCore::tick(float_t dt)
         _gameOverFlag = (WSGameOverFlag)(_gameOverFlag | kSnakeADie);
     }
     
+    
     if (_mode == kComputer)
     {
         WSPoint* snakeBNextHeadPos = _snakeB->getNextHeadPos();
@@ -255,8 +272,8 @@ WSGameCore::tick(float_t dt)
         {
             if ((*snakeBNextHeadPos) == _foodPosition)
             {
-                _foodPosition->x = -1;
-                _foodPosition->y = -1;
+                _foodPosition->x = 1000;
+                _foodPosition->y = 1000;
                 _scoreB ++;
                 _snakeB->addSnakeBody();
             }
@@ -277,7 +294,7 @@ WSGameCore::tick(float_t dt)
         gameOver();
     }
     
-    if (_foodPosition->x == -1 && _foodPosition->y == -1)
+    if (_foodPosition->x == 1000 && _foodPosition->y == 1000)
     {
         genFoodPos();
     }

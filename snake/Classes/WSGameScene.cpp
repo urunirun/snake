@@ -7,6 +7,7 @@
 //
 
 #include "WSGameScene.h"
+#include "WSGameMenuScene.h"
 
 void
 WSGameScene::drawScene()
@@ -65,6 +66,15 @@ WSGameScene::initWithGameCoreModeAndLevel(WSGameMode mode, uint16_t level)
         _joyStick->setBallTexture("joystick.png");
         _joyStick->setDelegate(this);
         
+        CCMenuItemImage* btn = CCMenuItemImage::create("btn.png", "btn.png", this, menu_selector(WSGameScene::btnClick));
+        
+        btn->setPosition(ccp(980, 350));
+        btn->setScale(2.5);
+        CCMenu* menu = CCMenu::createWithItem(btn);
+        menu->setAnchorPoint(ccp(0, 0));
+        menu->setPosition(ccp(0, 0));
+        this->addChild(menu);
+        
         this->startGame();
         return true;
     }
@@ -82,6 +92,52 @@ void
 WSGameScene::tick(float_t dt)
 {
     _gameCore->tick(dt);
+    
+    if (_gameCore->getFin())
+    {
+        unschedule(schedule_selector(WSGameScene::tick));
+        unscheduleUpdate();
+
+        if (_gameCore->getGameMode() == kShow)
+        {
+            delete _gameCore;
+            _gameCore = new WSGameCore;
+            _gameCore -> initWithGameModeAndMapName(kShow, 0, this);
+            
+            return;
+        }
+        
+        CCLabelTTF* label;
+        if (_gameCore->getGameOverFlag() == kSnakeADie)
+        {
+            label = CCLabelTTF::create("You Lose", "ArialMT", 30);
+        }
+        
+        if (_gameCore->getGameOverFlag() == kSnakeBDie)
+        {
+            label = CCLabelTTF::create("You Lose", "ArialMT", 30);
+        }
+        
+        if (_gameCore->getGameOverFlag() == (kSnakeBDie | kSnakeADie))
+        {
+            label = CCLabelTTF::create("Tie", "ArialMT", 30);
+        }
+        
+        
+        label->setColor(ccc3(255, 0, 0));
+        label->setPosition(ccp(568, 320));
+        this->addChild(label);
+        this->runAction(CCSequence::createWithTwoActions(CCDelayTime::create(3), CCCallFunc::create(this, callfunc_selector(WSGameScene::gameOver))));
+    }
+}
+
+void
+WSGameScene::gameOver()
+{
+    WSGameMenuScene* scene = new WSGameMenuScene;
+    scene->init();
+    CCDirector::sharedDirector()->replaceScene(CCTransitionFade::create(.5f, scene));
+    scene->autorelease();
 }
 
 void
@@ -90,6 +146,11 @@ WSGameScene::update(float_t dt)
     _gameCore->update(dt);
 }
 
+void
+WSGameScene:: btnClick()
+{
+
+}
 void
 WSGameScene::onCCJoyStickUpdate(CCNode* sender, float angle, CCPoint direction, float power)
 {

@@ -12,19 +12,18 @@
 #include <iostream>
 #include "cocos2d.h"
 
-#include "WSBackGroundLayer.h"
-#include "WSGameLayer.h"
 #include "CCJoyStick.h"
 #include "WSGameScene.h"
-#include "WSGameBackGroundLayer.h"
 
 using namespace cocos2d;
 
 class WSGameMenuScene: public WSGameScene {
 private:
     void                onCCJoyStickUpdate(CCNode* sender, float angle, CCPoint direction, float power);
+    bool                _menuStatus;
 public:
     bool                init();
+    void                btnClick();
 };
 
 #endif /* defined(__snake__WSGameMenuScene__) */

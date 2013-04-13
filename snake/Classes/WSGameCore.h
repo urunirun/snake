@@ -41,10 +41,12 @@ private:
     
     WSGameScene*    _gameScene;
     WSGameOverFlag  _gameOverFlag;
+    bool            _fin;
     
     void            gameOver();
     void            colisionDetection();
     void            genFoodPos();
+    
     
 public:
     WSSnake*        getSnakeA();
@@ -52,6 +54,9 @@ public:
     WSGameMode      getGameMode();
     WSMap*          getGameMap();
     WSPoint*        getFoodPosition();
+    
+    bool            getFin();
+    WSGameOverFlag  getGameOverFlag();
     
     uint16_t        getGameLevel();
     uint16_t        getScoreA();
