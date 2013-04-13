@@ -10,7 +10,7 @@
 bool
 WSGameMenuScene::init()
 {
-    if (WSGameScene::initWithGameCoreMode(kShow))
+    if (WSGameScene::initWithGameCoreModeAndLevel(kShow, 0))
     {
                 
         CCSprite*   menuImage = CCSprite::create("menuLayer.png");
@@ -28,5 +28,5 @@ WSGameMenuScene::init()
 void
 WSGameMenuScene::onCCJoyStickUpdate(CCNode* sender, float angle, CCPoint direction, float power)
 {
-    
+    CCLOG("%f %f", direction.x, direction.y);
 }

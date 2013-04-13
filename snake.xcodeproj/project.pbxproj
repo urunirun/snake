@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD1C6D7D16F0142E0035E2FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */; };
+		AD45287117195CE50033EF53 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = AD45287017195CE50033EF53 /* food.png */; };
 		AD8071ED171938360061DAAA /* easy_map in Resources */ = {isa = PBXBuildFile; fileRef = AD8071EC171938360061DAAA /* easy_map */; };
 		AD8071F017193A970061DAAA /* edge.png in Resources */ = {isa = PBXBuildFile; fileRef = AD8071EF17193A970061DAAA /* edge.png */; };
 		AD825A001715D89F00F67D49 /* CCJoyStick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AD8259FE1715D89F00F67D49 /* CCJoyStick.cpp */; };
@@ -223,6 +224,7 @@
 
 /* Begin PBXFileReference section */
 		AD1C6D7C16F0142E0035E2FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AD45287017195CE50033EF53 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		AD8071EC171938360061DAAA /* easy_map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = easy_map; sourceTree = "<group>"; };
 		AD8071EF17193A970061DAAA /* edge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edge.png; sourceTree = "<group>"; };
 		AD8259FE1715D89F00F67D49 /* CCJoyStick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCJoyStick.cpp; path = libs/CCJoyStick.cpp; sourceTree = "<group>"; };
@@ -792,6 +794,7 @@
 		ADFAABC816E8E7DE00C60519 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD45287017195CE50033EF53 /* food.png */,
 				ADE2F08F1719499D0069B388 /* snake2.png */,
 				ADE2F0901719499D0069B388 /* snake1.png */,
 				AD8071EF17193A970061DAAA /* edge.png */,
@@ -1704,6 +1707,7 @@
 				AD8071F017193A970061DAAA /* edge.png in Resources */,
 				ADE2F0911719499D0069B388 /* snake2.png in Resources */,
 				ADE2F0921719499D0069B388 /* snake1.png in Resources */,
+				AD45287117195CE50033EF53 /* food.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@
 #define kComputerNormal "easy_map"
 #define kComputerHard   "easy_map"
 
-#define kEasySpeed      1.5
+#define kEasySpeed      .05
 #define kNormalSpeed    1.2
 #define kHardSpeed      1
 
@@ -73,6 +73,11 @@ WSGameCore::getRemainTime()
     return _remainTime;
 }
 
+float_t
+WSGameCore::getSpeed()
+{
+    return _speed;
+}
 void
 WSGameCore::initWithGameModeAndMapName(WSGameMode   mode,
                                        uint16_t     level,
@@ -93,7 +98,7 @@ WSGameCore::initWithGameModeAndMapName(WSGameMode   mode,
         else
         {
             _map->initWithFile(kShowMap);
-            _snakeA = new WSAISnake();
+            _snakeA = new WSSnake();
         }
         
         _snakeA ->initWithDirectionLengthAndFirstPos(kRight, 4, _map->getFirstSnakeHead());
@@ -131,15 +136,10 @@ WSGameCore::initWithGameModeAndMapName(WSGameMode   mode,
         
         _scoreA = 0;
         _scoreB = 0;
-
     }
-}
-
-void
-WSGameCore::startGame()
-{
-    schedule(schedule_selector(WSGameCore::tick) , _speed);
-    scheduleUpdate();
+    
+    _foodPosition = new WSPoint;
+    this->genFoodPos();
 }
 
 void
@@ -181,7 +181,7 @@ WSGameCore::genFoodPos()
     for (int i=0; i<_map->getWidth(); i++) {
         map.push_back(std::vector<bool>(_map->getHeight()));
         for (int j=0; j<_map->getHeight(); j++) {
-            map[i][j] = _map->checkPointlegal(WSPoint::pointWithInt(i, j));
+            map[i][j] = (_map->getMapNodeByXY(i, j) != kEdge);
         }
     }
     
@@ -190,29 +190,31 @@ WSGameCore::genFoodPos()
         map[pos->x][pos->y] = false;
     }
     
-    for (int i=0; i<_snakeB->getPositions()->count(); i++) {
-        WSPoint* pos = (WSPoint*)_snakeB->getPositions()->objectAtIndex(i);
-        map[pos->x][pos->y] = false;
-    }
-    
-    std::vector<WSPoint*> emptyArray;
-    for (int i=0; i<_map->getWidth(); i++) {
-        for (int j=0; j<_map->getHeight(); j++) {
-            if (map[i][j])
-                emptyArray.push_back(WSPoint::pointWithInt(i, j));
+    if (_snakeB)
+    {
+        for (int i=0; i<_snakeB->getPositions()->count(); i++) {
+            WSPoint* pos = (WSPoint*)_snakeB->getPositions()->objectAtIndex(i);
+            map[pos->x][pos->y] = false;
         }
     }
     
-    srand(time(NULL));
-    uint16_t pos = random() % emptyArray.size();
-    _foodPosition->x =  emptyArray[ pos ]->x;
-    _foodPosition->y =  emptyArray[ pos ]->y;
+    std::vector<CCPoint> emptyArray;
+    for (int i=0; i<_map->getWidth(); i++) {
+        for (int j=0; j<_map->getHeight(); j++) {
+            if (map[i][j])
+                emptyArray.push_back(ccp(i,j));
+        }
+    }
+    
+    uint16_t pos_ = arc4random() % emptyArray.size();
+    _foodPosition->x = (uint16_t) emptyArray[ pos_ ].x;
+    _foodPosition->y = (int) emptyArray[ pos_ ].y;
 }
 
 void
 WSGameCore::gameOver()
 {
-    
+    CCLOG("GameOver!!!!!!!!");
 }
 
 void
@@ -220,16 +222,16 @@ WSGameCore::tick(float_t dt)
 {
     if (_mode == kComputer)
     {
-        _snakeB->clacDirection(_snakeA, _map, _foodPosition);
+        _snakeB->calcDirection(_snakeA, _map, _foodPosition);
     }
     
     if (_mode == kShow)
     {
-        _snakeA->clacDirection(_snakeA, _map, _foodPosition);
+        _snakeA->calcDirection(_snakeA, _map, _foodPosition);
     }
     
     WSPoint* snakeANextHeadPos = _snakeA->getNextHeadPos();
-    if (_map->checkPointlegal(snakeANextHeadPos))
+    if (_map->checkPointlegal(snakeANextHeadPos) && _snakeA->pointNotInSelf(snakeANextHeadPos))
     {
         if ((*snakeANextHeadPos) == _foodPosition)
         {
@@ -249,7 +251,7 @@ WSGameCore::tick(float_t dt)
     if (_mode == kComputer)
     {
         WSPoint* snakeBNextHeadPos = _snakeB->getNextHeadPos();
-        if (_map->checkPointlegal(snakeBNextHeadPos))
+        if (_map->checkPointlegal(snakeBNextHeadPos) && _snakeB->pointNotInSelf(snakeBNextHeadPos))
         {
             if ((*snakeBNextHeadPos) == _foodPosition)
             {
@@ -267,7 +269,8 @@ WSGameCore::tick(float_t dt)
         }
     }
     
-    this->colisionDetection();
+    if (_mode == kComputer)
+        this->colisionDetection();
     
     if (_gameOverFlag != kNoBodyDie)
     {

@@ -83,6 +83,7 @@ WSMap::checkPointlegal(WSPoint *point)
 {
     if (point->x < 0 || point -> x >= _width)  return false;
     if (point->y < 0 || point -> y >= _height) return false;
+    if (_map[point->x][point->y] == kEdge) return false;
     return true;
 }
 

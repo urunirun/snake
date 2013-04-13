@@ -22,7 +22,7 @@ using namespace cocos2d;
 
 class WSGameScene;
 
-class WSGameCore: public CCNode{  //why it is CCNode.. Because CCSchedule relay on CCObject
+class WSGameCore{
 private:
     WSSnake*        _snakeA;
     WSSnake*        _snakeB;
@@ -57,12 +57,12 @@ public:
     uint16_t        getScoreA();
     uint16_t        getScoreB();
     float_t         getRemainTime();
+    float_t         getSpeed();
     
     void            initWithGameModeAndMapName(WSGameMode   mode,
                                                uint16_t     level,
                                                WSGameScene* gameScene);
     
-    void            startGame();
     void            tick(float_t dt);         //schedule All frames
     void            update(float_t dt);        //schedule time
     

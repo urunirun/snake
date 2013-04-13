@@ -18,6 +18,7 @@ public:
     
     uint16_t    x, y;
     
+    
     void initWithInt(int x, int y)
     {
         this->x = x;

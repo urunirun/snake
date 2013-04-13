@@ -11,6 +11,7 @@
 void
 WSGameScene::drawScene()
 {
+    _gameLayer->drawSelf();
 }
 
 void
@@ -26,12 +27,12 @@ WSGameScene::getGameCore()
 }
 
 bool
-WSGameScene::initWithGameCoreMode(WSGameMode mode)
+WSGameScene::initWithGameCoreModeAndLevel(WSGameMode mode, uint16_t level)
 {
     if (CCScene::init())
     {
         _gameCore = new WSGameCore;
-        _gameCore->initWithGameModeAndMapName(mode, 0, this);
+        _gameCore->initWithGameModeAndMapName(mode, level, this);
         
         _backGroundLayer = new WSBackGroundLayer();
         _backGroundLayer->init();
@@ -64,9 +65,29 @@ WSGameScene::initWithGameCoreMode(WSGameMode mode)
         _joyStick->setBallTexture("joystick.png");
         _joyStick->setDelegate(this);
         
+        this->startGame();
         return true;
     }
     return false;
+}
+
+void
+WSGameScene::startGame()
+{
+    schedule(schedule_selector(WSGameScene::tick) , _gameCore->getSpeed());
+    scheduleUpdate();
+}
+
+void
+WSGameScene::tick(float_t dt)
+{
+    _gameCore->tick(dt);
+}
+
+void
+WSGameScene::update(float_t dt)
+{
+    _gameCore->update(dt);
 }
 
 void

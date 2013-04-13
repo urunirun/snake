@@ -9,7 +9,7 @@
 #include "WSAISnake.h"
 
 void
-WSAISnake::clacDirection(WSSnake* snakeA, WSMap* map, WSPoint* food)
+WSAISnake::calcDirection(WSSnake* snakeA, WSMap* map, WSPoint* food)
 {
     
 }

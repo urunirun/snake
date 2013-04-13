@@ -20,7 +20,6 @@ WSGameLayer::drawSelf()
     for (int i=0; i<arr->count(); i++) {
         WSPoint* point = (WSPoint*) arr->objectAtIndex(i);
         CCSprite* sprite = CCSprite::create("snake1.png");
-        CCLOG("%d %d", point->x, point->y);
         
         sprite->setAnchorPoint(ccp(0, 0));
         sprite->setPosition(ccp(320+ point->x*sprite->boundingBox().size.width, 170 + (map->getHeight()-point->y-1)*sprite->boundingBox().size.height));
@@ -35,13 +34,19 @@ WSGameLayer::drawSelf()
         for (int i=0; i<arr->count(); i++) {
             WSPoint* point = (WSPoint*) arr->objectAtIndex(i);
             CCSprite* sprite = CCSprite::create("snake2.png");
-            CCLOG("%d %d", point->x, point->y);
             
             sprite->setAnchorPoint(ccp(0, 0));
             sprite->setPosition(ccp(320+ point->x*sprite->boundingBox().size.width, 170 + (map->getHeight()-point->y-1)*sprite->boundingBox().size.height));
             this->addChild(sprite);
         }
     }
+    
+    WSPoint* point = _gameScene->getGameCore()->getFoodPosition();
+    CCSprite* sprite = CCSprite::create("food.png");
+    
+    sprite->setAnchorPoint(ccp(0, 0));
+    sprite->setPosition(ccp(320+ point->x*sprite->boundingBox().size.width, 170 + (map->getHeight()-point->y-1)*sprite->boundingBox().size.height));
+    this->addChild(sprite);
 }
 
 bool

@@ -36,12 +36,17 @@ protected:
     void                    onCCJoyStickUpdate(CCNode* sender, float angle, CCPoint direction, float power);
     void                    onCCJoyStickActivated(CCNode* sender){CC_UNUSED_PARAM(sender);}
     void                    onCCJoyStickDeactivated(CCNode* sender){CC_UNUSED_PARAM(sender);}
+    void                    startGame();
 public:
     WSGameCore*             getGameCore();
     
     void                    drawScene();
     void                    drawTimeLabel();
-    bool                    initWithGameCoreMode(WSGameMode mode);
+    bool                    initWithGameCoreModeAndLevel(WSGameMode mode, uint16_t level);
+    
+    void            tick(float_t dt);         //schedule All frames
+    void            update(float_t dt);        //schedule time
+    
 };
 
 

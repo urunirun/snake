@@ -20,9 +20,10 @@ class WSGameScene;
 class WSGameLayer: public CCLayer {
 private:
     WSGameScene*                _gameScene;
-    void                        drawSelf();
+    
 public:
     bool                        initWithGameScene(WSGameScene* scene);
+    void                        drawSelf();
 };
 
 

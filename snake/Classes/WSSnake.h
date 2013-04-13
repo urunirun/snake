@@ -20,6 +20,7 @@ class WSSnake {
 protected:
     WSSnakeDirection    _direction;
     cocos2d::CCArray*   _positions;
+    WSSnakeDirection    getDirectionRev();
 public:
     uint16_t            getSnakeLength();
     WSSnakeDirection    getDirection();
@@ -31,8 +32,9 @@ public:
     void                initWithDirectionLengthAndFirstPos(WSSnakeDirection direction, uint16_t length, WSPoint* pos);
     void                move();
     WSPoint*            getNextHeadPos();
-    void                clacDirection(WSSnake* snakeA, WSMap* map, WSPoint* food);
+    void                calcDirection(WSSnake* snakeA, WSMap* map, WSPoint* food);
     ~WSSnake();
+    bool                pointNotInSelf(WSPoint* point);
 };
 
 #endif /* defined(__snake__WSSnake__) */

@@ -16,7 +16,7 @@
 class WSAISnake: public WSSnake {
     
 public:
-    void  clacDirection(WSSnake* snakeA, WSMap* map, WSPoint* food);
+    void  calcDirection(WSSnake* snakeA, WSMap* map, WSPoint* food);
 };
 
 #endif /* defined(__snake__WSAISnake__) */
